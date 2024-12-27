@@ -25,6 +25,10 @@ connection.connect((err) => {
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
+
 app.get("/custom-css-pdf", async (req, res) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
